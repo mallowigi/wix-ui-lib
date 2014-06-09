@@ -19,3 +19,4 @@ Name      | Default                                                             
 ----------|----------------------------------------------------------------------|------------
 languages | `['En', 'De', 'Es', 'Fr', 'It', 'Po', 'Pt', 'Ru', 'Ja', 'Ko', 'Tr']` | a list of languages to choose from
 height    | `auto`                                                               | expandable list height, extra content will cam be accessed by scrolling the list
+value     | `En`                                                                 | the default selected language

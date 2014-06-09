@@ -70,6 +70,22 @@ describe('LanguagePicker', function () {
         expect(Wix.UI.get($(element).attr('wix-model')).index).toEqual(2);
     });
 
+    it('should set selected option from the wix-option value', function() {
+        $(element).attr('wix-options', "{value: \'Es\'}");
+        Wix.UI.initializePlugin(element);
+        var $languagePicker = $(".uilib-languagePicker");
+        var $selected = $languagePicker.find('.selected .option');
+        expect($selected.text()).toBe('Es');
+    });
+
+    it('should fallback to first language is value is omitted', function() {
+        $(element).attr('wix-options', "{languages: [\'En\', \'Fr\']}");
+        Wix.UI.initializePlugin(element);
+        var $languagePicker = $(".uilib-languagePicker");
+        var $selected = $languagePicker.find('.selected .option');
+        expect($selected.text()).toBe('En');
+    });
+
     function givenLanguagesWeSupport() {
        return ['English', 'Deutsch', 'Español', 'Français', 'Italiano', 'Polski', 'Português', 'Русский', '日本語', '한국어', 'Türkçe'];
     }

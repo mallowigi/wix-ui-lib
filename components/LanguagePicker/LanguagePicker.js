@@ -35,6 +35,7 @@ jQuery.fn.definePlugin('LanguagePicker', function () {
 			this.dropdown = this.$el.Dropdown({
 					   width: 62,
 				      height: height,
+                	  value: this.options.value,
                 optionsWidth: 105,
                     modifier: function($el){
                         var $globe = $("<span class='globe'></span>");
